@@ -28,7 +28,7 @@ function test() {
         $('.section').remove();
 
 
-        document.querySelector('#eventHeader').textContent = "Events in  " + city;
+        document.querySelector('.eventHeader').textContent = "Events in  " + city;
         for (var j = 0; j < 19; j++) {
 
 
@@ -71,13 +71,10 @@ function test() {
 
             $('#pageHeader').text(response._embedded.events[work].name);
             $('#date').text(moment(response._embedded.events[work].dates.start.localDate).format("MMM Do YYYY"));
-            // $('#price').text("Price: $" + response._embedded.events[work].priceRanges[0].min + " to $" + response._embedded.events[work].priceRanges[0].max);
-            $('#city').text(moment(response._embedded.events[work].dates.start.dateTime).format("LT"));
-            $('#vlocation').text(response._embedded.events[work]._embedded.venues[0].name);
+            $('#price').text("Price: $" + response._embedded.events[work].priceRanges[0].min + " to $" + response._embedded.events[work].priceRanges[0].max);
+            $('#city').text("Start Time: " + moment(response._embedded.events[work].dates.start.dateTime).format("LT"));
+            $('#vlocation').text("Venue: "+ response._embedded.events[work]._embedded.venues[0].name);
 
-            // $(".modal-content").text(response._embedded.events[work].dates.start.localDate)
-            // $(".modal-content").firstChild.text(response._embedded.events[work].priceRanges[0].min)
-            // $(".modal-content").text(response._embedded.events[work].priceRanges[0].max)
 
         }
 
@@ -271,7 +268,7 @@ function test5() {
         $('.divider').remove();
         $('.section').remove();
 
-        document.querySelector('#eventHeader').textContent = "Results for  " + keyword;
+        document.querySelector('.eventHeader').textContent = "Results for  " + keyword;
         for (var j = 0; j < 19; j++) {
 
             
@@ -314,9 +311,9 @@ function test5() {
 
             $('#pageHeader').text(response._embedded.events[work].name);
             $('#date').text(moment(response._embedded.events[work].dates.start.localDate).format("MMM Do YYYY"));
-            // $('#price').text("Price: $" + response._embedded.events[work].priceRanges[0].min + " to $" + response._embedded.events[work].priceRanges[0].max);
-            $('#city').text(moment(response._embedded.events[work].dates.start.dateTime).format("LT"));
-            $('#vlocation').text(response._embedded.events[work]._embedded.venues[0].name);
+            $('#price').text("Price: $" + response._embedded.events[work].priceRanges[0].min + " to $" + response._embedded.events[work].priceRanges[0].max);
+            $('#city').text("Start Time: " + moment(response._embedded.events[work].dates.start.dateTime).format("LT"));
+            $('#vlocation').text("Venue: "+ response._embedded.events[work]._embedded.venues[0].name);
 
         }
     })
@@ -409,8 +406,7 @@ function calculateAndDisplayRoute(directionsService, directionsRenderer) {
 }
 
 $(document).on("click", "#directions", function (event) {
-    // location.href = "./index.html";
-    // test();
+    
 });
 
 
@@ -446,16 +442,6 @@ $(document).on("click", ".buttonID2", function (event) {
 
 var directionButton = document.querySelector('#directionBtn')
 
-if(directionButton){
-directionButton.addEventListener("click", function (event) {
-
-    event.preventDefault();
-    console.log("clicked")
-    location.target = '_blank';
-    location.href = 'directions.html';
-    
-});
-}
 
 
 $(document).on("click", ".buttonID", function (event) {
@@ -510,7 +496,11 @@ $(document).ready(function () {
             event.preventDefault();
 
             ticketUrl = localStorage.getItem("ticketUrl");
-            window.location.href = ticketUrl;
+            window.open(
+                ticketUrl,
+                '_blank'
+              );
+            
             console.log(ticketUrl);
 
         })
