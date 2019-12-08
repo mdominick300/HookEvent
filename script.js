@@ -36,10 +36,11 @@ function test() {
             var div = document.createElement('div');
             div.setAttribute('class', "divider");
             var div2 = document.createElement('div');
+            div2.setAttribute('class', "col s6 m6")
             var div3 = document.createElement('div');
-            div3.setAttribute('class', "col m6")
+            div3.setAttribute('class', "col s6 m6")
             var section = document.createElement('section');
-            section.setAttribute('class', 'section');
+            section.setAttribute('class', 'section row');
             var h5 = document.createElement("h5");
             h5.textContent = response._embedded.events[j].name;
             var p = document.createElement("p");
@@ -278,10 +279,11 @@ function test5() {
             var div = document.createElement('div');
             div.setAttribute('class', "divider");
             var div2 = document.createElement('div');
+            div2.setAttribute('class', "col s6 m6")
             var div3 = document.createElement('div');
-            div3.setAttribute('class', "col m6")
+            div3.setAttribute('class', "col s6 m6")
             var section = document.createElement('section');
-            section.setAttribute('class', 'section');
+            section.setAttribute('class', 'section row');
             var h5 = document.createElement("h5");
             h5.textContent = response._embedded.events[j].name;
             var p = document.createElement("p");
@@ -449,8 +451,9 @@ directionButton.addEventListener("click", function (event) {
 
     event.preventDefault();
     console.log("clicked")
+    location.target = '_blank';
     location.href = 'directions.html';
-
+    
 });
 }
 

@@ -127,13 +127,13 @@ nav .brand-logo {
     background: #80cbc4;
     color: white;
 }
-.section{
+/* .section{
     padding-bottom: 50px;
     /* float: left; */
-}
+/* } */
 section img{
-    height: 300px;
-    width: 400px;
+    height: 100%;
+    width: 100%;
 
 }
 h5{
@@ -244,6 +244,7 @@ h5{
           float: none;
           width: auto;
         }
+
       }
 
 
