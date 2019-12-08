@@ -3,6 +3,16 @@
   color: rgb(43, 170, 170);
   margin: 50px;
 }
+#modalTop{
+  background: #80cbc4;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: white;
+  text-align: center;
+  margin-top: 0;
+  font-size: 30px;
+
+}
 button{
     background: #80cbc4;
     color: white;

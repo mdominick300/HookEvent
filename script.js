@@ -14,6 +14,8 @@ var buyTickets = document.querySelector('#priceBtn');
 var getDirections = document.querySelector('#directions')
 var eventTitle = document.querySelector('.eventTitle');
 
+
+
 // function makes list of events based on city input
 function test() {
 
@@ -311,7 +313,9 @@ function test5() {
 
             $('#pageHeader').text(response._embedded.events[work].name);
             $('#date').text(moment(response._embedded.events[work].dates.start.localDate).format("MMM Do YYYY"));
+            if(response._embedded.events[work].priceRanges[0].min !== null){
             $('#price').text("Price: $" + response._embedded.events[work].priceRanges[0].min + " to $" + response._embedded.events[work].priceRanges[0].max);
+        }
             $('#city').text("Start Time: " + moment(response._embedded.events[work].dates.start.dateTime).format("LT"));
             $('#vlocation').text("Venue: "+ response._embedded.events[work]._embedded.venues[0].name);
 
@@ -418,7 +422,7 @@ var directionsContainer = document.querySelector(".directions");
 $(document).on("click", ".buttonID", function (event) {
 
 
-    test();
+    
     work = $(this).attr('data-info');
     console.log(work);
 
@@ -430,7 +434,7 @@ var directionsContainer = document.querySelector(".directions");
 $(document).on("click", ".buttonID2", function (event) {
 
 
-    test5();
+ 
     work = $(this).attr('data-info');
     console.log(work);
 
