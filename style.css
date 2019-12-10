@@ -21,6 +21,10 @@ button{
 }
 #directionBtn{
   color: white;
+  background: #80cbc4;
+  color: white;
+  padding: 10px;
+  
 }
 .sport1{
     float:left;

@@ -38,9 +38,9 @@ function test() {
             var div = document.createElement('div');
             div.setAttribute('class', "divider");
             var div2 = document.createElement('div');
-            div2.setAttribute('class', "col s6 m6")
+            div2.setAttribute('class', "col s12 m6")
             var div3 = document.createElement('div');
-            div3.setAttribute('class', "col s6 m6")
+            div3.setAttribute('class', "col s12 m6")
             var section = document.createElement('section');
             section.setAttribute('class', 'section row');
             var h5 = document.createElement("h5");
@@ -54,9 +54,9 @@ function test() {
             button.setAttribute('href', "#modal1");
             button.text = "More Event Details";
             button.setAttribute('data-info', j);
-            console.log("buttonclicked");
 
-            
+
+
             button.setAttribute('data-dest', response._embedded.events[j]._embedded.venues[0].name);
             button.setAttribute('data-url', response._embedded.events[j].url);
 
@@ -75,7 +75,7 @@ function test() {
             $('#date').text(moment(response._embedded.events[work].dates.start.localDate).format("MMM Do YYYY"));
             $('#price').text("Price: $" + response._embedded.events[work].priceRanges[0].min + " to $" + response._embedded.events[work].priceRanges[0].max);
             $('#city').text("Start Time: " + moment(response._embedded.events[work].dates.start.dateTime).format("LT"));
-            $('#vlocation').text("Venue: "+ response._embedded.events[work]._embedded.venues[0].name);
+            $('#vlocation').text("Venue: " + response._embedded.events[work]._embedded.venues[0].name);
 
 
         }
@@ -253,7 +253,7 @@ if (searchBtn2) {
         startScreenContainer.classList.add('hidden');
         searchListContainer.classList.remove('hidden');
         test5();
-
+        console.log("search2");
     })
 };
 
@@ -273,14 +273,14 @@ function test5() {
         document.querySelector('.eventHeader').textContent = "Results for  " + keyword;
         for (var j = 0; j < 19; j++) {
 
-            
+
             console.log(response);
             var div = document.createElement('div');
             div.setAttribute('class', "divider");
             var div2 = document.createElement('div');
-            div2.setAttribute('class', "col s6 m6")
+            div2.setAttribute('class', "col s12 m6")
             var div3 = document.createElement('div');
-            div3.setAttribute('class', "col s6 m6")
+            div3.setAttribute('class', "col s12 m6")
             var section = document.createElement('section');
             section.setAttribute('class', 'section row');
             var h5 = document.createElement("h5");
@@ -294,9 +294,9 @@ function test5() {
             button.setAttribute('href', "#modal1");
             button.text = "More Event Details";
             button.setAttribute('data-info', j);
-            console.log("buttonclicked");
 
-            
+
+
             button.setAttribute('data-dest', response._embedded.events[j]._embedded.venues[0].name);
             button.setAttribute('data-url', response._embedded.events[j].url);
 
@@ -310,16 +310,20 @@ function test5() {
             console.log(j)
             document.querySelector(".list").appendChild(div).parentNode.appendChild(section).appendChild(div3).appendChild(h5).parentNode.appendChild(p).parentNode.appendChild(button).parentNode.parentNode.appendChild(div2).appendChild(img)
 
-
             $('#pageHeader').text(response._embedded.events[work].name);
             $('#date').text(moment(response._embedded.events[work].dates.start.localDate).format("MMM Do YYYY"));
-            if(response._embedded.events[work].priceRanges[0].min !== null){
-            $('#price').text("Price: $" + response._embedded.events[work].priceRanges[0].min + " to $" + response._embedded.events[work].priceRanges[0].max);
-        }
+            if (response._embedded.events[work].priceRanges[0].min !== null) {
+                $('#price').text("Price: $" + response._embedded.events[work].priceRanges[0].min + " to $" + response._embedded.events[work].priceRanges[0].max);
+            } else {
+                return
+            }
             $('#city').text("Start Time: " + moment(response._embedded.events[work].dates.start.dateTime).format("LT"));
-            $('#vlocation').text("Venue: "+ response._embedded.events[work]._embedded.venues[0].name);
+            $('#vlocation').text("Venue: " + response._embedded.events[work]._embedded.venues[0].name);
+
 
         }
+
+
     })
 }
 
@@ -410,7 +414,7 @@ function calculateAndDisplayRoute(directionsService, directionsRenderer) {
 }
 
 $(document).on("click", "#directions", function (event) {
-    
+
 });
 
 
@@ -422,7 +426,7 @@ var directionsContainer = document.querySelector(".directions");
 $(document).on("click", ".buttonID", function (event) {
 
 
-    
+    test();
     work = $(this).attr('data-info');
     console.log(work);
 
@@ -431,17 +435,17 @@ $(document).on("click", ".buttonID", function (event) {
 });
 
 var directionsContainer = document.querySelector(".directions");
+
+
 $(document).on("click", ".buttonID2", function (event) {
-
-
- 
+    console.log("search");
+    test5();
     work = $(this).attr('data-info');
     console.log(work);
 
 
 
 });
-
 
 
 var directionButton = document.querySelector('#directionBtn')
@@ -459,11 +463,11 @@ $(document).on("click", ".buttonID", function (event) {
 
     destination = $(this).attr('data-dest');
     ticketUrl = $(this).attr('data-url');
-    
+
     localStorage.setItem('ticketUrl', ticketUrl);
     localStorage.setItem('dest', destination);
-    
-    
+
+
 
     console.log(ticketUrl);
     console.log(destination);
@@ -481,11 +485,11 @@ $(document).on("click", ".buttonID2", function (event) {
 
     destination = $(this).attr('data-dest');
     ticketUrl = $(this).attr('data-url');
-    
+
     localStorage.setItem('ticketUrl', ticketUrl);
     localStorage.setItem('dest', destination);
-    
-    
+
+
 
     console.log(ticketUrl);
     console.log(destination);
@@ -503,8 +507,8 @@ $(document).ready(function () {
             window.open(
                 ticketUrl,
                 '_blank'
-              );
-            
+            );
+
             console.log(ticketUrl);
 
         })
