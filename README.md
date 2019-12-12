@@ -16,10 +16,10 @@ https://mdominick300.github.io/HookEvent/
 
 
 # ScreenShots
-<img src="Assets/Screen Shot 2019-12-12 at 6.22.09 PM.png" width=400px>
-<img src="Assets/Screen Shot 2019-12-12 at 6.22.19 PM.png" width=400px>
-<img src="Assets/Screen Shot 2019-12-12 at 6.22.27 PM.png" width=400px>
-<img src="Assets/Screen Shot 2019-12-12 at 6.22.51 PM.png" width=400px>
+<img src="assets/Screen Shot 2019-12-12 at 6.22.09 PM.png" width=400px>
+<img src="assets/Screen Shot 2019-12-12 at 6.22.19 PM.png" width=400px>
+<img src="assets/Screen Shot 2019-12-12 at 6.22.27 PM.png" width=400px>
+<img src="assets/Screen Shot 2019-12-12 at 6.22.51 PM.png" width=400px>
 
 
 # License
